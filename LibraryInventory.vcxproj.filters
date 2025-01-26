@@ -36,5 +36,6 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include=".gitignore" />
+    <None Include="README.md" />
   </ItemGroup>
 </Project>
