@@ -29,13 +29,31 @@ int main() {
   lib.printAllBooks();
 
   // Lookup by ID
-  int searchId = 3;
-  Book* found = lib.getBookById(searchId);
-  if (found) {
-    std::cout << "\nBook found by ID " << searchId << ": "
-      << found->getTitle()
-      << " by " << found->getAuthor()
-      << "\n";
+  int searchId1 = 2;
+  Book* foundBook1 = lib.getBookById(searchId1);
+  if (foundBook1) {
+    std::cout << "\n";
+    if (foundBook1->getStatus() == BookStatus::Available) {
+      foundBook1->setStatus(BookStatus::Reserved);
+      std::cout << "Book '" << foundBook1->getTitle() << "' is now reserved.\n";
+    }
+    else {
+      std::cout << "Book '" << foundBook1->getTitle() << "' is not available.\n";
+    }
+  }
+
+  // Checkout Book
+  int searchId2 = 3;
+  Book* foundBook2 = lib.getBookById(searchId2);
+  if (foundBook2) {
+    std::cout << "\n";
+    if (foundBook2->getStatus() == BookStatus::Available) {
+      foundBook2->setStatus(BookStatus::CheckedOut);
+      std::cout << "Book '" << foundBook2->getTitle() << "' is now checked out.\n";
+    }
+    else {
+      std::cout << "Book '" << foundBook2->getTitle() << "' is not available.\n";
+    }
   }
 
   // Print books by category

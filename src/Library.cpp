@@ -40,7 +40,9 @@ void Library::printBooksInCategory(const std::string& category) const {
 		if (b) {
 			std::cout << "[" << b->getId() << "] "
 				<< b->getTitle() << " by "
-				<< b->getAuthor() << "\n";
+				<< b->getAuthor() << " - "
+				<< b->getStatusText()
+				<< "\n";
 		}
 	}
 }
@@ -53,6 +55,8 @@ void Library::printAllBooks() const {
 		std::cout << "[" << b->getId() << "] "
 			<< b->getTitle() << " by "
 			<< b->getAuthor()
-			<< " (Category: " << b->getCategory() << ")\n";
+			<< " (Category: " << b->getCategory()
+			<< " - Status: " << b->getStatusText()
+			<< ")\n";
 	}
 }

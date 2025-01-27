@@ -149,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Book.h" />
+    <ClInclude Include="src\BookStatus.h" />
     <ClInclude Include="src\Library.h" />
   </ItemGroup>
   <ItemGroup>
